@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  public constructor(private titleService: Title ) { 
+    this.titleService.setTitle("Bogdan Dumbrăvean");
+  }
+
   title = 'portofolio';
-  facebookLink:string = "https://www.facebook.com/BzGamesOfficial";
-  twitterLink:string = "https://twitter.com/BzGamesOfficial";
+  gmail:string = "dumbraveanb@gmail.com";
+  facebookLink:string = "https://www.facebook.com/bogdan.dumbravean";
+  linkedinLink:string = "https://www.linkedin.com/in/bogdan-dumbr%C4%83vean-a145bb1b4";
 }

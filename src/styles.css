@@ -50,12 +50,30 @@ h1, h2, h3, h4, h5, h6{
 .p-readmore:hover img{
     transform: translateX(5px);
 }
+
+/* CONTACTS */
 .p-contact{
     position: fixed;
     left: 0;
     bottom: 0;
     width: 25vw;
     text-align: left;
+}
+.p-contact-item a{
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 25vw;
+}
+.p-caption {
+    display: block;
+}
+@media (max-width: 900px) {
+    .p-caption {
+        font-size: small;
+        word-wrap: break-word;
+        white-space: normal;
+    }
 }
 
 /* WRAPPER CLASS*/
