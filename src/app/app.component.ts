@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portofolio';
+  facebookLink:string = "https://www.facebook.com/BzGamesOfficial";
+  twitterLink:string = "https://twitter.com/BzGamesOfficial";
 }

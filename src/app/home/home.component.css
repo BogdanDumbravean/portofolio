@@ -1,0 +1,74 @@
+
+
+
+.p-profile{
+    background: url('/assets/img/Bogdan Dumbravean.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+@media (min-width: 900px) {
+    .p-profile{
+        width:70%;
+        height:375px;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 900px) {
+    .p-profile{
+        width:70%;
+        height:270px;
+        margin-top: 30px;
+        margin: 0 auto;
+    }
+    h1 {
+        font-size: large;
+        margin-left: 25vw;
+    }
+    p{
+        margin-left: 25vw;
+    }
+    .p-rgt-sec{
+        width: 90vw;
+    }
+}
+
+.p-rgt-sec{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    margin: auto;
+    
+}
+.p-tag{
+    background: #989898;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.p-des{
+    color: #acacac;
+    width: 80%;
+}
+/* form .form-group{
+    display: flex;
+    box-shadow: 1px 2px 12px 1px #0003;
+    width: 80%;
+}
+form .form-control{
+    min-height: 60px;
+    padding: 10px 20px;
+    border-radius: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background-color: #fff;
+    width: calc(100% - 141px);
+}
+form .btn-warning{
+    min-height: 60px;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 35px;
+    font-weight: 500;
+} */

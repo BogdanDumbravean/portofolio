@@ -1,5 +1,21 @@
-<!-- HEADER -->
-<app-header></app-header>
+<section class="p-wrapper">
+    <div class="p-background">
+        <!-- HEADER -->
+        <app-header></app-header>
+        
+        <!-- CONTACTS -->
+        <div class="p-contact">
+            <div class="p-contact-item">
+                <a [href]="facebookLink">
+                    <img src="assets/images/facebook.png">Facebook</a>
+            </div>
+            <div class="p-contact-item">
+                <a [href]="twitterLink">
+                    <img src="assets/images/twitter.png"> Twitter</a>
+            </div>
+        </div>
 
-<!-- ROUTER -->
-<router-outlet></router-outlet>
+        <!-- ROUTER -->
+        <router-outlet></router-outlet>
+    </div>
+</section>
