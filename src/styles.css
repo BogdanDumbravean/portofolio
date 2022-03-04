@@ -41,11 +41,20 @@ h1, h2, h3, h4, h5, h6{
 }
 .p-readmore{
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 10px;
 }
 .p-readmore img{
     transition: all .5s;
     transform: translateX(0);
+    width: 1em; 
+    height: 1em;
+    margin-left: .7em;
+    margin-right: 1em;
 }
 .p-readmore:hover img{
     transform: translateX(5px);
@@ -55,7 +64,7 @@ h1, h2, h3, h4, h5, h6{
 .p-contact{
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 2vw;
     width: 25vw;
     text-align: left;
 }
@@ -64,15 +73,26 @@ h1, h2, h3, h4, h5, h6{
     display: inline-block;
     text-align: center;
     width: 25vw;
+    margin-top: 15px;
+}
+.p-contact-item a img{
+    width: 40px;
 }
 .p-caption {
     display: block;
+    text-align: center;
 }
 @media (max-width: 900px) {
     .p-caption {
         font-size: small;
         word-wrap: break-word;
         white-space: normal;
+    }
+    .p-readmore{
+        font-size: medium;
+    }
+    .p-contact-item a img{
+        width: 30px;
     }
 }
 
@@ -83,7 +103,7 @@ h1, h2, h3, h4, h5, h6{
 .p-wrapper::before{
     content: '';
     background: #f9b205;
-    height: 100vh;
+    height: 100%;
     width: 25vw;
     position:fixed;
     z-index: -1;
@@ -95,4 +115,5 @@ h1, h2, h3, h4, h5, h6{
     width: 100vw;
     position: fixed;
     z-index: -2;
+    transform: scale(2.5);
 }
