@@ -11,6 +11,7 @@ import { EducationComponent } from './about/education/education.component';
 import { HobbiesComponent } from './about/hobbies/hobbies.component';
 import { ProgrammingComponent } from './portofolio/programming/programming.component';
 import { GamesComponent } from './portofolio/games/games.component';
+import { ProjectDetailComponent } from './portofolio/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GamesComponent } from './portofolio/games/games.component';
     EducationComponent,
     HobbiesComponent,
     ProgrammingComponent,
-    GamesComponent
+    GamesComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

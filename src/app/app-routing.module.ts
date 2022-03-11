@@ -7,6 +7,7 @@ import { ProgrammingComponent } from './portofolio/programming/programming.compo
 import { GamesComponent } from './portofolio/games/games.component';
 import { EducationComponent } from './about/education/education.component';
 import { HobbiesComponent } from './about/hobbies/hobbies.component';
+import { ProjectDetailComponent } from './portofolio/project-detail/project-detail.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'hobbies',
     component: HobbiesComponent
+  },
+  {
+    path: 'projects/:list/:id',
+    component: ProjectDetailComponent
   }
 ];
 

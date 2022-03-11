@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PROGRAMMING } from 'src/app/project.list';
 
 @Component({
   selector: 'app-programming',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./programming.component.css']
 })
 export class ProgrammingComponent implements OnInit {
+  programming;
 
-  constructor() { }
+  constructor() { 
+    this.programming = PROGRAMMING;
+  }
 
   ngOnInit(): void {
   }
