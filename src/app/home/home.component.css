@@ -1,25 +1,25 @@
 
 
 
-.p-profile{
-    background: url('/assets/img/Bogdan Dumbravean.jpg');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
+.p-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-@media (min-width: 900px) {
+@media (min-width: 992px) {
     .p-profile{
         width:70%;
-        height:70%;
+        height: min(70%, 40vh);
         margin-top: 50px;
     }
 }
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     .p-profile{
         width:70%;
         height:270px;
         margin-top: 30px;
         margin: 0 auto;
+        display: flex;
     }
     h1 {
         font-size: large;

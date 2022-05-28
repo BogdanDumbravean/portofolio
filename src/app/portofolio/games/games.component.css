@@ -2,7 +2,7 @@
     justify-content: space-between;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
     .container{
         margin-left: 25vw;
         width: 70vw;
@@ -19,13 +19,15 @@
         vertical-align: top;
         display: inline-block;
         width: 15%;
+        height: 100px;
+        margin-left: 10px;
     }
     .p-summary p{
         display: inline-block;
         width: 80%;
     }
 }
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     .container{
         margin-left: 25vw;
         width: 70vw;
@@ -40,6 +42,10 @@
     }
     .p-image{
         width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
     }
     .p-summary p{
         width: 95%;
@@ -75,7 +81,8 @@ p {
     margin-left: 10px;
 }
 .p-image{
-    margin-left: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
 hr{

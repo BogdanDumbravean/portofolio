@@ -72,16 +72,16 @@ h1, h2, h3, h4, h5, h6{
     display: inline-block;
     text-align: center;
     width: 20vw;
-    margin-top: 15px;
+    margin-top: 7px;
 }
 .p-contact-item a img{
-    width: 40px;
+    width: 50px;
 }
 .p-caption {
     display: block;
     text-align: center;
 }
-@media (max-width: 900px) {
+@media (max-width: 992px) {
     .p-caption {
         font-size: smaller;
         word-wrap: break-word;
@@ -90,9 +90,9 @@ h1, h2, h3, h4, h5, h6{
     .p-readmore{
         font-size: medium;
     }
-    .p-contact-item a img{
+    /* .p-contact-item a img{
         width: 9vw;
-    }
+    } */
     .p-contact{
         font-size: 3.5vw;
     }
@@ -101,16 +101,14 @@ h1, h2, h3, h4, h5, h6{
 /* WRAPPER CLASS*/
 .p-wrapper{
     position: relative;
-}
-.p-wrapper::before{
     content: '';
     background: #f9b205;
-    height: 100%;
+    height: 100vh;
     width: 20vw;
     position:fixed;
     z-index: -1;
 }
-.p-background::before{
+.p-background{
     content: '';
     background: url('/assets/img/triangle-mosaic.png');
     height: 100vh;

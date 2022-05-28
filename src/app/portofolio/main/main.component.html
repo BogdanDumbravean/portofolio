@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-        <p>Most of my projects are programming related, but I split them into the games I developed, and other programming projects.</p>
+        <p>Most of my projects are programming related, but I split them into the games I developed (most of which were realised in Unity) and other programming projects. While I present here even some small projects, this list does not include everything, for various reasons.</p>
         <p>Note that this website is also developed by me with Angular. Another project I would mention is that I started a company, but I put it on hold while studying for the master’s degree and working on another start-up.</p>
         <div class="row">
             <div class="p-programming">
@@ -9,7 +9,7 @@
                     <h5 class="mb-2 mt-1">{{project.title}}</h5>
                     <img class="p-image" src={{project.profile}}>
                     <p class="mb-2">{{project.summary}}</p>
-                    <a routerLink="/projects/programming/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a>
+                    <!-- <a routerLink="/projects/programming/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a> -->
                 </div>
                 <a [routerLink]="['/programming']" class="p-seemore">See more...</a>
                 <hr>
@@ -20,7 +20,7 @@
                     <h5 class="mb-2 mt-1">{{project.title}}</h5>
                     <img class="p-image" src={{project.profile}}>
                     <p class="mb-2">{{project.summary}}</p>
-                    <a routerLink="/projects/games/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a>
+                    <!-- <a routerLink="/projects/games/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a> -->
                 </div>
                 <a [routerLink]="['/games']" class="p-seemore">See more...</a>
                 <hr>
