@@ -14,15 +14,19 @@ export class Project {
 }
 
 export class ImgPath {
+    isVideo:boolean = false;
     path:string;
-    constructor(path:string) {
+    constructor(path:string, isVideo:boolean = false) {
+        this.isVideo = isVideo;
         this.path = path;
     }
 }
 
 export class Text {
+    isLink:boolean = false;
     text:string;
-    constructor(text:string) {
+    constructor(text:string, isLink:boolean = false) {
+        this.isLink = isLink;
         this.text = text;
     }
 }

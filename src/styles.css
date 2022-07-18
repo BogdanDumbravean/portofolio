@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
+.wip {
+    font-size: smaller;
+    color:lightslategray;
+    margin-bottom: 25px;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -67,11 +73,14 @@ h1, h2, h3, h4, h5, h6{
     width: 20vw;
     text-align: left;
 }
+.p-contact-item{
+    text-align: center;
+}
 .p-contact-item a{
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    width: 20vw;
+    /* width: 20vw; */
     margin-top: 7px;
 }
 .p-contact-item a img{

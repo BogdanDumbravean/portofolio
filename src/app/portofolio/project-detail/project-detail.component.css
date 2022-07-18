@@ -12,3 +12,11 @@
         font-size: small;
     }
 }
+
+.p-image {
+    width: 50%;
+}
+
+a {
+    color: blue;
+}

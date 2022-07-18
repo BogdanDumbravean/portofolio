@@ -9,7 +9,7 @@
 @media (min-width: 992px) {
     .p-profile{
         width:70%;
-        height: min(70%, 40vh);
+        height: min(70%, 30vh);
         margin-top: 50px;
     }
 }

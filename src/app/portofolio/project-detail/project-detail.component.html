@@ -1,6 +1,38 @@
 <section>
     <div class="container">
-        <p>{{project.title}}</p>
-        <p>This page is a work in progress!</p>
+        <p class="wip">This page is a work in progress!</p>
+        <h4>{{project.title}}</h4>
+        <img class="p-image" src={{project.profile}}>
+        <p class="mb-2">{{project.summary}}</p>
+        <div *ngFor="let item of project.content; let idx = index">
+            <!-- {{idx}} -->
+            <div *ngIf="isPath(project.content[idx]); then thenBlock else elseBlock"></div>
+            
+            <ng-template #thenBlock>
+                <div *ngIf="isVideo(project.content[idx]); then thenBlock else elseBlock"></div>
+               
+                <ng-template #thenBlock>
+                    <video class="p-image" autoplay controls> 
+                        <source src={{getPath(project.content[idx])}} type="video/mp4">
+                    </video>
+                </ng-template>
+                
+                <ng-template #elseBlock>
+                    <img class="p-image" src={{getPath(project.content[idx])}}>
+                </ng-template>
+            </ng-template>
+
+            <ng-template #elseBlock>
+                <div *ngIf="isLink(project.content[idx]); then thenBlock else elseBlock"></div>
+                
+                <ng-template #thenBlock>
+                    <a href="{{getText(project.content[idx])}}">{{getText(project.content[idx])}}</a>
+                </ng-template>
+                
+                <ng-template #elseBlock>
+                    {{getText(project.content[idx])}}
+                </ng-template>
+            </ng-template>
+        </div>
     </div>
 </section>

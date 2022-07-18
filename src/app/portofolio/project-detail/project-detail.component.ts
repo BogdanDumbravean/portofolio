@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PROGRAMMING, GAMES } from 'src/app/project.list';
-import { Project } from 'src/app/project.model';
+import { ImgPath, Text, Project } from 'src/app/project.model';
 
 @Component({
   selector: 'app-project-detail',
@@ -31,4 +31,23 @@ export class ProjectDetailComponent implements OnInit {
     this.location.back();
   }
 
+  isLink(val: any): boolean { 
+    return val.isLink; 
+  }
+
+  isVideo(val: any): boolean { 
+    return val.isVideo; 
+  }
+
+  isPath(val: any): boolean { 
+    return val instanceof ImgPath; 
+  }
+  
+  getPath(val: any): string {
+    return val.path;
+  }
+
+  getText(val: any): string {
+    return val.text;
+  }
 }

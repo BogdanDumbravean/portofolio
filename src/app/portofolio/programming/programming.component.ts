@@ -4,7 +4,7 @@ import { PROGRAMMING } from 'src/app/project.list';
 @Component({
   selector: 'app-programming',
   templateUrl: './programming.component.html',
-  styleUrls: ['./programming.component.css']
+  styleUrls: ['../main/main.component.css']
 })
 export class ProgrammingComponent implements OnInit {
   programming;

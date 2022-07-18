@@ -13,6 +13,7 @@ export class AppComponent {
 
   title = 'portofolio';
   gmail:string = "dumbraveanb@gmail.com";
+  instagramLink:string = "https://www.instagram.com/bogdan_dumbra/";
   facebookLink:string = "https://www.facebook.com/bogdan.dumbravean";
   linkedinLink:string = "https://www.linkedin.com/in/bogdan-dumbr%C4%83vean-a145bb1b4";
 }

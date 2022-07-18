@@ -12,3 +12,34 @@
         font-size: small;
     }
 }
+
+.container {
+    margin-bottom: 10vh;
+}
+
+ul {
+    margin-left: 5vw;
+}
+
+h4 {
+    margin-top: 15px;
+}
+
+.disclaimer {
+    font-size: small;
+    color: gray;
+}
+
+a {
+    color: blue;
+}
+
+.hidden {
+    display: none;
+ }
+
+ button {
+    color: gray;
+    background-color: transparent;
+    border: 1px;
+ }
