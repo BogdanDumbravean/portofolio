@@ -3,7 +3,7 @@ import { ImgPath, Project, Text, RichTextSegment } from "./project.model";
 export const PROGRAMMING: Project[] = [
     new Project(
         "Personal Portfolio Website",
-        "assets/img/Portofolio/portfolio-screenshot.png",
+        "assets/img/Portfolio/portfolio-screenshot.png",
         "A modern, responsive portfolio website built with Angular and TypeScript. Features a clean design with a sidebar navigation, project showcases, detailed project views, and an about section. Deployed on GitHub Pages with proper routing and fallback handling.",
         [
             new Text("", false, [
@@ -19,7 +19,7 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "", isNewline: true },
                 { text: "Source code available at: " },
-                { text: "GitHub Repository", isLink: true, url: "https://github.com/BogdanDumbravean/portofolio" }
+                { text: "GitHub Repository", isLink: true, url: "https://github.com/BogdanDumbravean/portfolio" }
             ] as RichTextSegment[])
         ]
     ),
