@@ -2,6 +2,24 @@ import { ImgPath, Project, Text, RichTextSegment } from "./project.model";
 
 export const PROGRAMMING: Project[] = [
     new Project(
+        "Conference Management",
+        "assets/img/Faculta/ISS/Login.png",
+        "Application for managing the stages of a conference, made in a team. I was chosen as team leader, so I had knowledge of the whole application, but my main tasks were in the back-end and the database.",
+        [
+        ]
+    ),
+    new Project(
+        "Bolts and Gears",
+        "assets/img/Liceu/FTC.png",
+        "First season of FTC in Romania. The contest starts from gathering funds and resources, to building the robot, and ends with a competition between the robots of the qualified teams. We qualified to the national phase. My main task was programming, but I contributed a lot to building the physical part too.",
+        [
+            new Text("", false, [
+            { text: "You can see the current state of the team at: " },
+            { text: "Bolts and Gears", isLink: true, url: "https://www.facebook.com/boltsngears" }
+            ] as RichTextSegment[])
+        ]
+    ),
+    new Project(
         "Personal Portfolio Website",
         "assets/img/Portfolio/portfolio-screenshot.png",
         "A modern, responsive portfolio website built with Angular and TypeScript. Features a clean design with a sidebar navigation, project showcases, detailed project views, and an about section. Deployed on GitHub Pages with proper routing and fallback handling.",
@@ -20,24 +38,6 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "Source code available at: " },
                 { text: "GitHub Repository", isLink: true, url: "https://github.com/BogdanDumbravean/portfolio" }
-            ] as RichTextSegment[])
-        ]
-    ),
-    new Project(
-        "Conference Management",
-        "assets/img/Faculta/ISS/Login.png",
-        "Application for managing the stages of a conference, made in a team. I was chosen as team leader, so I had knowledge of the whole application, but my main tasks were in the back-end and the database.",
-        [
-        ]
-    ),
-    new Project(
-        "Bolts and Gears",
-        "assets/img/Liceu/FTC.png",
-        "First season of FTC in Romania. The contest starts from gathering funds and resources, to building the robot, and ends with a competition between the robots of the qualified teams. We qualified to the national phase. My main task was programming, but I contributed a lot to building the physical part too.",
-        [
-            new Text("", false, [
-            { text: "You can see the current state of the team at: " },
-            { text: "Bolts and Gears", isLink: true, url: "https://www.facebook.com/boltsngears" }
             ] as RichTextSegment[])
         ]
     ),
