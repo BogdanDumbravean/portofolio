@@ -1929,7 +1929,7 @@ const GAMES = [
     new _project_model__WEBPACK_IMPORTED_MODULE_0__.Project("Carl", "assets/img/Games/Carl.png", "Winner of the GetCrEAtive hackathon, this game was done in a three-man team in 24h. It's a side-view 2D racing game, but with a twist. This is better to show, not tell 😉", [
         new _project_model__WEBPACK_IMPORTED_MODULE_0__.ImgPath("assets/img/Games/Carl.mp4", true)
     ]),
-    new _project_model__WEBPACK_IMPORTED_MODULE_0__.Project("Procedural Village Generation", "assets/img/Faculta/Master/unnamed.png", "Although not a game by itself, this project is intended for game development. It's a gamified approach on village procedural generation, making use of suggestions to let the designer maintain more control over the creation process.", [
+    new _project_model__WEBPACK_IMPORTED_MODULE_0__.Project("Procedural Village Generation", "assets/img/Faculta/Master/unnamed.png", "Although not a game by itself, this project was intended for game development. It's a gamified approach on village procedural generation, making use of suggestions to let the designer maintain more control over the creation process.", [
         new _project_model__WEBPACK_IMPORTED_MODULE_0__.Text("", false, [
             { text: "You can read more about the research at:" },
             { text: "", isNewline: true },
