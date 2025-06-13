@@ -5,6 +5,15 @@
         max-width: 1200px;
         margin: 0 auto;
     }
+    
+    .language-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -27,6 +36,21 @@
     
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about-card {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    .about-card p {
+        margin-bottom: 15px;
+    }
+    
+    .p-readmore {
+        font-size: 16px;
+        min-height: 35px;
     }
     
     .language-grid {
@@ -108,6 +132,9 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-left: 5px solid #f9b205;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
 }
 
 .about-card:hover {
@@ -135,12 +162,14 @@
     background: #f8f8f8;
     border-radius: 50%;
     color: #f9b205;
+    flex-shrink: 0;
 }
 
 .about-card p {
     color: #555;
     margin-bottom: 20px;
     line-height: 1.5;
+    flex-grow: 1;
 }
 
 /* Skills Section */
@@ -266,6 +295,9 @@
     align-items: center;
     justify-content: flex-end;
     margin-bottom: 10px;
+    margin-top: auto;
+    white-space: nowrap;
+    min-height: 40px;
 }
 
 .p-readmore img {
@@ -274,6 +306,7 @@
     width: 1em;
     height: 1em;
     margin-left: .7em;
+    flex-shrink: 0;
 }
 
 .p-readmore:hover img {
