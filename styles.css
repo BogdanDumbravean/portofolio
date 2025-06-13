@@ -11808,7 +11808,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .p-background{
     content: '';
-    background: url('/assets/img/triangle-mosaic.png');
+    background: url('triangle-mosaic.png');
     height: 100vh;
     width: 100vw;
     position: fixed;
