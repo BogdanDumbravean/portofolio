@@ -1,40 +1,61 @@
-<section class="p-wrapper">
-</section>
-<div class="p-background">
-</div>
-
-<div>
-    <!-- HEADER -->
-    <app-header></app-header>
-        
-    <!-- CONTACTS -->
-    <div class="p-contact">
-        <div class="p-contact-item">
-            <a [href]="instagramLink">
-                <img src="assets/img/instagram.png">
-                <!-- <span class="p-caption">Facebook</span> -->
-            </a>
+<div class="main-container">
+    <!-- Mobile overlay -->
+    <div class="sidebar-overlay" [class.open]="isSidebarOpen" (click)="closeSidebarOnMobile()"></div>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" [class.open]="isSidebarOpen">
+        <div class="sidebar-content">
+            <div class="profile">
+                <h3 class="profile-name">Bogdan Dumbrăvean</h3>
+                <p class="profile-title">Software Engineer & Game Developer</p>
+            </div>
+              <nav class="nav-menu">
+                <ul>
+                    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeSidebarOnMobile()">Home</a></li>
+                    <li><a routerLink="/about" routerLinkActive="active" (click)="closeSidebarOnMobile()">About</a></li>
+                    <li><a routerLink="/portofolio" routerLinkActive="active" (click)="closeSidebarOnMobile()">Portfolio</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-section">
+                <h4>Get In Touch</h4>
+                <div class="social-links">
+                    <a [href]="linkedinLink" target="_blank" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a [href]="instagramLink" target="_blank" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a [href]="facebookLink" target="_blank" title="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="{{'mailto: ' + gmail}}" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </a>
+                </div>
+                <div class="email-address">
+                    <a href="{{'mailto: ' + gmail}}">{{gmail}}</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <p>&copy; {{currentYear}} Bogdan Dumbrăvean</p>
+            </div>
         </div>
-        <div class="p-contact-item">
-            <a [href]="facebookLink">
-                <img src="assets/img/facebook.png">
-                <!-- <span class="p-caption">Facebook</span> -->
-            </a>
+    </aside>
+    
+    <!-- Mobile sidebar toggle -->
+    <button class="sidebar-toggle" [class.open]="isSidebarOpen" (click)="toggleSidebar()">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </button>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Content -->
+        <div class="page-content">
+            <router-outlet></router-outlet>
         </div>
-        <div class="p-contact-item">
-            <a [href]="linkedinLink">
-                <img src="assets/img/linkedin.png"> 
-                <!-- <span class="p-caption">LinkedIn</span> -->
-            </a>
-        </div>
-        <div class="p-contact-item">
-            <a href="{{'mailto: ' + gmail}}">
-                <img src="assets/img/gmail.png">
-            </a>
-            <span class="p-caption">dumbraveanb@gmail.com</span>
-        </div>
-    </div>
-
-    <!-- ROUTER -->
-    <router-outlet></router-outlet>
+    </main>
 </div>

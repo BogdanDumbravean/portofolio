@@ -5,7 +5,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './portofolio/main/main.component';
 import { EducationComponent } from './about/education/education.component';
@@ -17,7 +16,6 @@ import { ProjectDetailComponent } from './portofolio/project-detail/project-deta
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     HomeComponent,
     MainComponent,
     EducationComponent,

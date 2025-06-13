@@ -1,33 +1,65 @@
-<section>
+<section class="home-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="p-profile">
-                    <img src="assets/img/Bogdan Dumbravean.jpg" class="p-image">
+        <div class="hero-section">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="assets/img/Bogdan Dumbravean.jpg" alt="Bogdan Dumbravean" class="avatar">
+                </div>
+                
+                <div class="profile-badges">
+                    <span class="badge primary-badge">Software Engineer</span>
+                    <span class="badge secondary-badge">Game Developer</span>
                 </div>
             </div>
-            <div class="col-lg-7 p-rgt-sec">
-                <div>
-                    <span class="p-tag">Software Engineer</span>
-                    <h1 class="mt-4">Bogdan Dumbrăvean</h1>
-                    <p class="p-des mt-3 mb-4">Hello, glad to see you here!</p>
-
-                    <p class="p-des mt-3 mb-4">In case you don’t know me, I’m a guy from Transylvania who studied computer science and game development, but you can learn more about me from the “About” page.</p>
-                        
-                    <p class="p-des mt-3 mb-4">If you’re here, I guess you’re interested to see something about me or my projects. I hope you find what you’re looking for!</p>
-                        
-                    <p class="p-des mt-3 mb-4">You can contact me if you want to chat. Use any method from the contacts on the left and I’ll answer.</p>
+            
+            <div class="intro-content">
+                <h1 class="name-heading">Bogdan Dumbrăvean</h1>
+                <div class="typing-container">
+                    <span class="typing-text">Developer. Designer. Creator.</span>
                 </div>
-
-                <!-- <div>
-                    <h6>Subscribe to our Newsletter</h6>
-                    <form class="form-inline" autocomplete="off">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email here" autocomplete="off">
-                            <button class="btn btn-warning">Subscribe</button>
-                        </div>
-                    </form>
-                </div> -->
+                
+                <div class="intro-text">
+                    <p>Hello, glad to see you here!</p>
+                    
+                    <p>I'm a software engineer from Romania with a passion for game development. 
+                    My expertise spans from web applications to procedural content generation and AI systems.</p>
+                    
+                    <p>This portfolio showcases my projects and professional journey. Feel free to explore and get in touch if you'd like to collaborate or chat about technology.</p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a routerLink="/about" class="btn primary-btn">About Me</a>
+                    <a routerLink="/portofolio" class="btn secondary-btn">View My Work</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skills-overview">
+            <h3 class="section-title">Core Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h4>Software Development</h4>
+                    <p>Building robust and scalable applications using modern technologies and best practices.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    </div>
+                    <h4>Game Development</h4>
+                    <p>Creating immersive game experiences with Unity and custom game engines.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"></path></svg>
+                    </div>
+                    <h4>Full-Stack Development</h4>
+                    <p>End-to-end application development with expertise in both front-end and back-end technologies.</p>
+                </div>
             </div>
         </div>
     </div>

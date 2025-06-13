@@ -1,15 +1,40 @@
+<section class="project-list-section">
+    <div class="container">
+        <div class="list-header">
+            <h2>Programming Projects</h2>
+            <p class="back-link"><a routerLink="/portofolio">&larr; Back to Portfolio</a></p>
+            <div class="list-intro">
+                <p>A collection of programming projects I've worked on throughout my career. These range from academic projects to professional applications and personal endeavors.</p>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="row">
-        <div class="p-programming">
-            <h3>Programming Projects</h3>
-            <div class="p-summary mt-4" *ngFor="let project of programming; let idx = index">
-                <h5 class="mb-2 mt-1">{{project.title}}</h5>
-                <img class="p-image" src={{project.profile}}>
-                <p class="mb-2">{{project.summary}}</p>
-                <!-- <a routerLink="/projects/programming/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a> -->
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" placeholder="Search projects..." (input)="searchProjects($event)">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>        
+        <div class="project-list">
+            <div class="project-item" *ngFor="let project of filteredProjects; let idx = index">
+                <div class="project-image">
+                    <img [src]="project.profile" [alt]="project.title" (error)="onImageError($event)">
+                </div>
+                <div class="project-details">
+                    <h3>{{project.title}}</h3>
+                    <p>{{project.summary}}</p>
+                    <div class="project-actions">
+                        <a routerLink="/projects/programming/{{idx}}" class="view-project-btn">
+                            View Details <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No results message -->
+            <div class="no-results" *ngIf="filteredProjects.length === 0">
+                <p>No projects match your search criteria.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 

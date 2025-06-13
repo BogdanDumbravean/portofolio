@@ -16,17 +16,36 @@ export class Project {
 export class ImgPath {
     isVideo:boolean = false;
     path:string;
-    constructor(path:string, isVideo:boolean = false) {
+    maxWidth?: string;
+    maxHeight?: string;
+    
+    constructor(path:string, isVideo:boolean = false, maxWidth?: string, maxHeight?: string) {
         this.isVideo = isVideo;
         this.path = path;
+        this.maxWidth = maxWidth;
+        this.maxHeight = maxHeight;
     }
 }
 
 export class Text {
     isLink:boolean = false;
     text:string;
-    constructor(text:string, isLink:boolean = false) {
+    isRichText:boolean = false;
+    richContent?: RichTextSegment[];
+    
+    constructor(text:string, isLink:boolean = false, richContent?: RichTextSegment[]) {
         this.isLink = isLink;
         this.text = text;
+        if (richContent) {
+            this.isRichText = true;
+            this.richContent = richContent;
+        }
     }
+}
+
+export interface RichTextSegment {
+    text: string;
+    isLink?: boolean;
+    url?: string;
+    isNewline?: boolean;
 }

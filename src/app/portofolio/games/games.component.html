@@ -1,15 +1,41 @@
+<section class="project-list-section">
+    <div class="container">
+        <div class="list-header">
+            <h2>Games Developed</h2>
+            <p class="back-link"><a routerLink="/portofolio">&larr; Back to Portfolio</a></p>
+            <div class="list-intro">
+                <p>A showcase of games I've developed, primarily built with Unity. These projects demonstrate my game design and development skills across various genres and platforms.</p>
+            </div>
+        </div>
 
-<div class="container">
-    <div class="row">
-        <div class="p-programming">
-            <h3>Games Developed</h3>
-            <div class="p-summary mt-4" *ngFor="let project of games; let idx = index">
-                <h5 class="mb-2 mt-1">{{project.title}}</h5>
-                <img class="p-image" src={{project.profile}}>
-                <p class="mb-2">{{project.summary}}</p>
-                <!-- <a routerLink="/projects/games/{{idx}}" class="p-readmore">Read More <img src="assets/img/rm_arw_rgt.png" alt="The icon for readmore arrow"/></a> -->
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" placeholder="Search games..." (input)="searchGames($event)">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>        
+        
+        <div class="project-list">
+            <div class="project-item game-item" *ngFor="let game of filteredGames; let idx = index">
+                <div class="project-image">
+                    <img [src]="game.profile" [alt]="game.title" (error)="onImageError($event)">
+                </div>
+                <div class="project-details">
+                    <h3>{{game.title}}</h3>
+                    <p>{{game.summary}}</p>
+                    <div class="project-actions">
+                        <a routerLink="/projects/games/{{idx}}" class="view-project-btn">
+                            View Details <span class="arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No results message -->
+            <div class="no-results" *ngIf="filteredGames.length === 0">
+                <p>No games match your search criteria.</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 

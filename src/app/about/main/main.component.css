@@ -1,99 +1,281 @@
-.row{
-    justify-content: space-between;
-}
-
-.p-rgt-sec{
-    vertical-align: top;
-    margin-bottom: 20px;
-}
-
 @media (min-width: 992px) {
-    .container{
-        margin-left: 30vw;
-        width: 65vw;
-    }
-    .row{
-        margin-top: 6vh;
-        width: 55vw;
-    }
-    .row:first-child{
-
-        margin-right: 6vw;
-    }
-    .p-rgt-sec{
-        display: inline-block;
-        width: auto;
-    }
-    .p-language{
-        margin-right: 2vw;
+    .container {
+        padding: 0 40px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
+
 @media (max-width: 992px) {
-    .container{
-        margin-left: 25vw;
-        width: 70vw;
+    .container {
+        padding: 0 20px;
+        width: 100%;
+        margin: 0 auto;
         font-size: small;
     }
-    .row{
-        margin-top: 3vh;
-        width: 65vw;
+    
+    .profile-section {
+        flex-direction: column;
     }
-    .p-rgt-sec{
-        width: 75vw;
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 20px auto;
     }
-    .p-language{
-        margin-right: 0;
+    
+    .about-grid {
+        grid-template-columns: 1fr;
     }
-    h5 {
-        font-size: large;
+    
+    .language-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-.p-tag{
-    background: #989898;
-    color: #fff;
-    padding: 2px 10px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    white-space: nowrap;
+.container {
+    margin-bottom: 10vh;
+    padding-bottom: 30px;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #f9b205;
+    flex-shrink: 0;
+    margin-right: 30px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-content {
+    flex: 1;
+}
+
+.profile-content h3 {
+    margin-bottom: 15px;
+    position: relative;
     display: inline-block;
-    border-radius: 5px;
+    padding-bottom: 10px;
 }
 
-.p-language-column{
+.profile-content h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: #f9b205;
+}
+
+.profile-content p {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* About Cards Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.about-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #f9b205;
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-card-header {
     display: flex;
     justify-content: space-between;
-}
-.p-language{
-    margin-left: 15px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 10px;
-}
-.p-full-box, .p-empty-box{
-    padding: 5px 5px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    height: 1.5em;
-    width: .8em;
-    display: inline-block;
-    vertical-align: middle;
-}
-.p-full-box{
-    background: #000;
-    box-shadow: 1px 3px lightgray;
-}
-.p-empty-box{
-    background: lightgray;
-    box-shadow: inset 0px 0px 3px black;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.p-summary{
-    box-shadow: 1px 3px lightgray;
+.about-card h4 {
+    margin: 0;
+    color: #333;
+}
+
+.about-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    border-radius: 50%;
+    color: #f9b205;
+}
+
+.about-card p {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Skills Section */
+.skills-section {
     background: white;
-    border: 1px solid black;
-    border-radius: 16px;
-    white-space: normal;
-    margin-bottom: 3vh;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #f9b205;
+}
+
+.skills-container {
+    margin-bottom: 25px;
+}
+
+.skills-container:last-child {
+    margin-bottom: 0;
+}
+
+.skills-container h5 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background: #f5f5f5;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: #333;
+    transition: all 0.2s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.skill-tag:hover {
+    background: #f9b205;
+    color: white;
+    border-color: #f9b205;
+    transform: translateY(-2px);
+}
+
+/* Languages Section */
+.languages-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.language-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.language-level {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.progress-bar {
+    width: 70%;
+    height: 12px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #f9b205;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.level-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* Fix for the read more links */
+.p-readmore {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.p-readmore img {
+    transition: all .5s;
+    transform: translateX(0);
+    width: 1em;
+    height: 1em;
+    margin-left: .7em;
+}
+
+.p-readmore:hover img {
+    transform: translateX(5px);
 }

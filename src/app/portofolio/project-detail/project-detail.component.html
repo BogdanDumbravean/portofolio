@@ -1,38 +1,129 @@
-<section>
+<section class="project-detail">
     <div class="container">
-        <p class="wip">This page is a work in progress!</p>
-        <h4>{{project.title}}</h4>
-        <img class="p-image" src={{project.profile}}>
-        <p class="mb-2">{{project.summary}}</p>
-        <div *ngFor="let item of project.content; let idx = index">
-            <!-- {{idx}} -->
-            <div *ngIf="isPath(project.content[idx]); then thenBlock else elseBlock"></div>
-            
-            <ng-template #thenBlock>
-                <div *ngIf="isVideo(project.content[idx]); then thenBlock else elseBlock"></div>
-               
-                <ng-template #thenBlock>
-                    <video class="p-image" autoplay controls> 
-                        <source src={{getPath(project.content[idx])}} type="video/mp4">
-                    </video>
+        <!-- Project Header -->
+        <div class="project-header">
+            <div class="breadcrumbs">
+                <a routerLink="/portofolio">Portfolio</a> / 
+                <a [routerLink]="['/'+projectType]">{{projectType | titlecase}}</a> / 
+                <span>{{project.title}}</span>
+            </div>
+            <h1>{{project.title}}</h1>
+        </div>
+          <!-- Project Featured Image -->
+        <div class="featured-image">
+            <img [src]="project.profile" [alt]="project.title" (error)="onImageError($event)">
+        </div>
+        
+        <!-- Project Summary -->
+        <div class="project-summary">
+            <div class="summary-content">
+                <h3>Project Overview</h3>
+                <p>{{project.summary}}</p>
+            </div>
+        </div>
+        
+        <!-- Project Content -->
+        <div class="project-content">
+            <div *ngFor="let item of project.content; let idx = index" class="content-item">
+                <div *ngIf="isPath(project.content[idx]); then mediaBlock else textBlock"></div>
+                
+                <!-- Media Content (Images/Videos) -->
+                <ng-template #mediaBlock>
+                    <div *ngIf="isVideo(project.content[idx]); then videoBlock else imageBlock"></div>                    <!-- Video Block -->
+                    <ng-template #videoBlock>
+                        <div class="media-container video-container" 
+                             [class.responsive-media]="getMaxWidth(project.content[idx]) || getMaxHeight(project.content[idx])"
+                             [style.max-width]="getMaxWidth(project.content[idx])"
+                             [style.max-height]="getMaxHeight(project.content[idx])">
+                            <video controls preload="metadata" (error)="onVideoError($event)" (loadstart)="onVideoLoadStart($event)" *ngIf="!videoError"> 
+                                <source [src]="getPath(project.content[idx])" type="video/mp4">
+                                <p>Your browser does not support the video tag.</p>
+                            </video>
+                            <div class="video-fallback" *ngIf="videoError">
+                                <p>📹 Video could not be loaded.</p>
+                                <a [href]="getPath(project.content[idx])" target="_blank" class="download-video">
+                                    Download Video
+                                </a>
+                            </div>
+                        </div>
+                    </ng-template>
+                      <!-- Image Block -->
+                    <ng-template #imageBlock>
+                        <div class="media-container" 
+                             [class.responsive-media]="getMaxWidth(project.content[idx]) || getMaxHeight(project.content[idx])"
+                             [style.max-width]="getMaxWidth(project.content[idx])"
+                             [style.max-height]="getMaxHeight(project.content[idx])">
+                            <img [src]="getPath(project.content[idx])" alt="Project image" (error)="onImageError($event)">
+                        </div>
+                    </ng-template>
                 </ng-template>
                 
-                <ng-template #elseBlock>
-                    <img class="p-image" src={{getPath(project.content[idx])}}>
+                <!-- Text Content -->
+                <ng-template #textBlock>
+                    <div *ngIf="isRichText(project.content[idx]); then richTextBlock else simpleTextBlock"></div>
+                    
+                    <!-- Rich Text Block (supports mixed content and newlines) -->
+                    <ng-template #richTextBlock>
+                        <div class="rich-text-content">
+                            <ng-container *ngFor="let segment of getRichContent(project.content[idx])">
+                                <br *ngIf="segment.isNewline">
+                                <a *ngIf="segment.isLink && !segment.isNewline" 
+                                   [href]="segment.url || segment.text" 
+                                   target="_blank" 
+                                   class="project-link">
+                                    <span>{{segment.text}}</span>
+                                    <i class="external-link-icon">↗</i>
+                                </a>
+                                <span *ngIf="!segment.isLink && !segment.isNewline">{{segment.text}}</span>
+                            </ng-container>
+                        </div>
+                    </ng-template>
+                    
+                    <!-- Simple Text Block (backwards compatibility) -->
+                    <ng-template #simpleTextBlock>
+                        <div *ngIf="isLink(project.content[idx]); then linkBlock else textContent"></div>
+                        
+                        <!-- Link Block -->
+                        <ng-template #linkBlock>
+                            <div class="link-container">
+                                <a href="{{getText(project.content[idx])}}" target="_blank" class="project-link">
+                                    <span>{{getText(project.content[idx])}}</span>
+                                    <i class="external-link-icon">↗</i>
+                                </a>
+                            </div>
+                        </ng-template>
+                        
+                        <!-- Regular Text -->
+                        <ng-template #textContent>
+                            <div class="text-content">
+                                <p>{{getText(project.content[idx])}}</p>
+                            </div>
+                        </ng-template>
+                    </ng-template>
                 </ng-template>
-            </ng-template>
-
-            <ng-template #elseBlock>
-                <div *ngIf="isLink(project.content[idx]); then thenBlock else elseBlock"></div>
-                
-                <ng-template #thenBlock>
-                    <a href="{{getText(project.content[idx])}}">{{getText(project.content[idx])}}</a>
-                </ng-template>
-                
-                <ng-template #elseBlock>
-                    {{getText(project.content[idx])}}
-                </ng-template>
-            </ng-template>
+            </div>
+        </div>
+          <!-- Project Navigation -->
+        <div class="project-navigation">
+            <div class="prev-project">
+                <a *ngIf="hasPrevious" [routerLink]="['/projects', projectType, currentIndex - 1]">
+                    <span class="nav-arrow">←</span> Previous Project
+                </a>
+                <span *ngIf="!hasPrevious" class="nav-disabled">
+                    <span class="nav-arrow">←</span> Previous Project
+                </span>
+            </div>
+            <div class="back-to-list">
+                <a [routerLink]="['/'+projectType]">All {{projectType | titlecase}}</a>
+            </div>
+            <div class="next-project">
+                <a *ngIf="hasNext" [routerLink]="['/projects', projectType, currentIndex + 1]">
+                    Next Project <span class="nav-arrow">→</span>
+                </a>
+                <span *ngIf="!hasNext" class="nav-disabled">
+                    Next Project <span class="nav-arrow">→</span>
+                </span>
+            </div>
         </div>
     </div>
 </section>

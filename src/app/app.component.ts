@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -7,13 +7,39 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public constructor(private titleService: Title ) { 
+  title = 'portofolio';
+  gmail: string = "dumbraveanb@gmail.com";
+  instagramLink: string = "https://www.instagram.com/bogdan_dumbra/";
+  facebookLink: string = "https://www.facebook.com/bogdan.dumbravean";
+  linkedinLink: string = "https://www.linkedin.com/in/bogdan-dumbravean/";
+  isSidebarOpen: boolean = false;
+  currentYear: number = new Date().getFullYear();
+  
+  constructor(private titleService: Title) { 
     this.titleService.setTitle("Bogdan Dumbrăvean");
   }
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+  closeSidebarOnMobile() {
+    // Only close sidebar on mobile/tablet screens, or if explicitly requested
+    if (window.innerWidth <= 992 || this.isSidebarOpen) {
+      this.isSidebarOpen = false;
+    }
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (event.target.innerWidth > 992) {
+      this.isSidebarOpen = false;
+    }
+  }
 
-  title = 'portofolio';
-  gmail:string = "dumbraveanb@gmail.com";
-  instagramLink:string = "https://www.instagram.com/bogdan_dumbra/";
-  facebookLink:string = "https://www.facebook.com/bogdan.dumbravean";
-  linkedinLink:string = "https://www.linkedin.com/in/bogdan-dumbr%C4%83vean-a145bb1b4";
+  @HostListener('window:keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    // Close sidebar when Escape key is pressed
+    if (event.key === 'Escape' && this.isSidebarOpen && window.innerWidth <= 992) {
+      this.isSidebarOpen = false;
+      event.preventDefault();
+    }
+  }
 }

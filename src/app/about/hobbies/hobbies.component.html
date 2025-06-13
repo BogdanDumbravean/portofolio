@@ -1,51 +1,177 @@
 <section>
     <div class="container">
-        <p class="wip">This page is a work in progress!</p>
-        <h5>Travelling</h5>
-            <p>All over the Netherlands</p>
-            <p>Belgium</p>
-            <p>Bulgaria</p>
-            <p>Hungary</p>
-            <p>All over Romania</p>
-            <ul>
-                <li>Hiking</li>
-                <li>Backpacking in other cities</li>
-                <li>Going to the sea</li>
-                <li>Going to different cities thanks to school contests (earned medals as well)</li>
-            </ul>
-        <h5>Reading</h5>
-            <p>All kinds of books and manga</p>
-        <h5>Watching shows</h5>
-            <p>Tv shows</p>
-            <p>Movies</p>
-            <p>Anime</p>
-        <h5>Sports</h5>
-            <p>Basketball</p>
-            <p>Gym</p>
-            <p>Tennisball</p>
-            <p>Calisthenics</p>
-            <p>Swimming</p>
-            <p>Kickboxing</p>
-            <p>I also tried other sports, such as volleyball and football(soccer).</p>
-        <h5>Arts</h5>
-            <p>Drawing</p>
-            <p>Playing the piano</p>
-            <p>Making games</p>
-            <p>Other arts and crafts</p>
-            <ul>
-                <li>Painting</li>
-                <li>Journaling</li>
-                <li>Whittling</li>
-                <li>Origami</li>
-            </ul>
-        <h5>Playing games and solving puzzles</h5>
-            <p>Chess </p>
-            <p>Light up</p>
-            <p>Rubik cube</p>
-            <p>Video games</p>
-            <p>Board games - dnd</p>
-        <h5>Volunteer experience:</h5>
-            <p>Bike fest</p>
-            <p>Mountain camp</p>
+        <div class="hobbies-header">
+            <h3>My Hobbies & Interests</h3>
+        </div>
+        
+        <div class="hobbies-grid">
+            <!-- Sports & Physical Activities -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/sports-icon.png" alt="Sports icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Sports & Physical Activities</h4>
+                    <div class="hobby-description">
+                        <p>Staying active is an important part of my life. I enjoy various physical activities:</p>
+                        <div class="tag-container">
+                            <span class="hobby-tag">Basketball</span>
+                            <span class="hobby-tag">Gym</span>
+                            <span class="hobby-tag">Tennis</span>
+                            <span class="hobby-tag">Calisthenics</span>
+                            <span class="hobby-tag">Swimming</span>
+                            <span class="hobby-tag">Kickboxing</span>
+                            <span class="hobby-tag">Volleyball</span>
+                            <span class="hobby-tag">Football</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traveling -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/travel-icon.png" alt="Travel icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Traveling</h4>
+                    <div class="hobby-description">
+                        <p>I love exploring new places and cultures. So far, I've visited:</p>
+                        <div class="collapsible">
+                            <button class="collapsible-btn" (click)="toggle(countriesElement)">
+                                <span class="toggle-icon">+</span> Countries Visited
+                            </button>
+                            <ul #countriesElement class="collapsible-content hidden">
+                                <li>Netherlands (extensively)</li>
+                                <li>Belgium</li>
+                                <li>Greece</li>
+                                <li>Spain</li>
+                                <li>Sweden</li>
+                                <li>Bulgaria</li>
+                                <li>Hungary</li>
+                                <li>Romania (my home country)</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible">
+                            <button class="collapsible-btn" (click)="toggle(activitiesElement)">
+                                <span class="toggle-icon">+</span> Travel Activities
+                            </button>
+                            <ul #activitiesElement class="collapsible-content hidden">
+                                <li>Hiking in mountain regions</li>
+                                <li>Backpacking in cities</li>
+                                <li>Beach vacations</li>
+                                <li>Academic travel for competitions (won medals)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arts & Creativity -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/art-icon.png" alt="Art icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Arts & Creativity</h4>
+                    <div class="hobby-description">
+                        <p>Expressing creativity through various mediums:</p>
+                        <div class="tag-container">
+                            <span class="hobby-tag">Drawing</span>
+                            <span class="hobby-tag">Piano</span>
+                            <span class="hobby-tag">Game Development</span>
+                            <span class="hobby-tag">Painting</span>
+                            <span class="hobby-tag">Journaling</span>
+                            <span class="hobby-tag">Whittling</span>
+                            <span class="hobby-tag">Origami</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reading & Media -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/reading-icon.png" alt="Reading icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Reading & Media</h4>
+                    <div class="hobby-description">
+                        <p>I enjoy consuming various types of media:</p>
+                        <div class="collapsible">
+                            <button class="collapsible-btn" (click)="toggle(readingElement)">
+                                <span class="toggle-icon">+</span> Reading Materials
+                            </button>
+                            <ul #readingElement class="collapsible-content hidden">
+                                <li>Fiction novels and short stories</li>
+                                <li>Non-fiction books on technology and science</li>
+                                <li>Manga and graphic novels</li>
+                                <li>Technical documentation (yes, for fun sometimes!)</li>
+                            </ul>
+                        </div>
+                        <div class="collapsible">
+                            <button class="collapsible-btn" (click)="toggle(watchingElement)">
+                                <span class="toggle-icon">+</span> Watching
+                            </button>
+                            <ul #watchingElement class="collapsible-content hidden">
+                                <li>TV shows (especially sci-fi and comedies)</li>
+                                <li>Movies (from blockbusters to indie films)</li>
+                                <li>Anime (both classic and recent series)</li>
+                                <li>Educational content</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gaming & Puzzles -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/gaming-icon.png" alt="Gaming icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Gaming & Puzzles</h4>
+                    <div class="hobby-description">
+                        <p>I enjoy challenging my mind with games and puzzles:</p>
+                        <div class="tag-container">
+                            <span class="hobby-tag">Chess</span>
+                            <span class="hobby-tag">Video Games</span>
+                            <span class="hobby-tag">Board Games</span>
+                            <span class="hobby-tag">D&D</span>
+                            <span class="hobby-tag">Light Up Puzzles</span>
+                            <span class="hobby-tag">Rubik's Cube</span>
+                            <span class="hobby-tag">Logic Puzzles</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteer Work -->
+            <div class="hobby-card">
+                <div class="hobby-icon">
+                    <!-- <img src="assets/img/volunteer-icon.png" alt="Volunteer icon"> -->
+                </div>
+                <div class="hobby-content">
+                    <h4>Volunteer Experience</h4>
+                    <div class="hobby-description">
+                        <p>Giving back to the community through volunteering:</p>
+                        <ul class="volunteer-list">
+                            <li>
+                                <span class="volunteer-event">Bike Fest</span>
+                                <p>Helped organize and run a community cycling event</p>
+                            </li>
+                            <li>
+                                <span class="volunteer-event">Mountain Camp</span>
+                                <p>Assisted with organizing outdoor activities for youth</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hobbies-footer">
+            <p>I believe that maintaining a diverse set of interests helps me stay creative and brings balance to my life. I'm always open to trying new activities and expanding my horizons!</p>
+        </div>
     </div>
 </section>

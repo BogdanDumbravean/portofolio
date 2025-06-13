@@ -1,77 +1,283 @@
-
-
-
-.p-image{
+/* Base styles */
+.home-section {
+    min-height: calc(100vh - 100px);
     width: 100%;
-    height: 100%;
+}
+
+.container {
+    margin-bottom: 60px;
+}
+
+/* Hero section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Profile area */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     object-fit: cover;
+    border: 5px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.avatar:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.primary-badge {
+    background-color: #f9b205;
+    color: #fff;
+}
+
+.secondary-badge {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Intro content */
+.intro-content {
+    flex: 1;
+    padding-left: 50px;
+}
+
+.name-heading {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #232323;
+}
+
+/* Typing effect */
+.typing-container {
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.typing-text {
+    position: relative;
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.intro-text {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* CTA buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.primary-btn {
+    background: #f9b205;
+    color: white;
+    box-shadow: 0 4px 15px rgba(249, 178, 5, 0.3);
+}
+
+.primary-btn:hover {
+    background: #e9a400;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(249, 178, 5, 0.4);
+}
+
+.secondary-btn {
+    background: white;
+    color: #333;
+    border: 2px solid #eee;
+}
+
+.secondary-btn:hover {
+    background: #f8f8f8;
+    transform: translateY(-3px);
+    border-color: #ddd;
+}
+
+/* Skills section */
+.skills-overview {
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: #f9b205;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    padding: 25px;
+    border-radius: 15px;
+    background: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #f9b205;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #f9b205;
+}
+
+.skill-card h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.skill-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive styles */
 @media (min-width: 992px) {
-    .p-profile{
-        width:70%;
-        height: min(70%, 30vh);
-        margin-top: 50px;
-    }
-}
-@media (max-width: 992px) {
-    .p-profile{
-        width:70%;
-        height:270px;
-        margin-top: 30px;
+    .container {
+        padding: 0 40px;
+        width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-    }
-    h1 {
-        font-size: large;
-        margin-left: 25vw;
-    }
-    p{
-        margin-left: 25vw;
-    }
-    .p-rgt-sec{
-        width: 90vw;
-    }
-    .p-tag{
-        margin-left: 25vw;
     }
 }
 
-.p-rgt-sec{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
-    margin-top: 10vh;
+@media (max-width: 991px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
     
+    .intro-content {
+        padding-left: 0;
+        padding-top: 40px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .name-heading {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 0 20px;
+        width: 100%;
+        margin: 0 auto;
+    }
 }
-.p-tag{
-    background: #989898;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 14px;
+
+@media (max-width: 767px) {
+    .avatar {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .name-heading {
+        font-size: 2rem;
+    }
+    
+    .typing-text {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
-.p-des{
-    color: #acacac;
-    width: 80%;
-}
-/* form .form-group{
-    display: flex;
-    box-shadow: 1px 2px 12px 1px #0003;
-    width: 80%;
-}
-form .form-control{
-    min-height: 60px;
-    padding: 10px 20px;
-    border-radius: 0;
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    background-color: #fff;
-    width: calc(100% - 141px);
-}
-form .btn-warning{
-    min-height: 60px;
-    border: 0;
-    border-radius: 0;
-    padding: 10px 35px;
-    font-weight: 500;
-} */

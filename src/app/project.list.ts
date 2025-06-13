@@ -1,6 +1,28 @@
-import { ImgPath, Project, Text } from "./project.model";
+import { ImgPath, Project, Text, RichTextSegment } from "./project.model";
 
 export const PROGRAMMING: Project[] = [
+    new Project(
+        "Personal Portfolio Website",
+        "assets/img/Portofolio/portfolio-screenshot.png",
+        "A modern, responsive portfolio website built with Angular and TypeScript. Features a clean design with a sidebar navigation, project showcases, detailed project views, and an about section. Deployed on GitHub Pages with proper routing and fallback handling.",
+        [
+            new Text("", false, [
+                { text: "Technologies used:" },
+                { text: "", isNewline: true },
+                { text: "• Built with Angular 12+ and TypeScript" },
+                { text: "", isNewline: true },
+                { text: "• Responsive design with mobile-first approach" },
+                { text: "", isNewline: true },
+                { text: "• Clean, modern UI with smooth animations" },
+                { text: "", isNewline: true },
+                { text: "• GitHub Pages deployment with proper routing" },
+                { text: "", isNewline: true },
+                { text: "", isNewline: true },
+                { text: "Source code available at: " },
+                { text: "GitHub Repository", isLink: true, url: "https://github.com/BogdanDumbravean/portofolio" }
+            ] as RichTextSegment[])
+        ]
+    ),
     new Project(
         "Conference Management",
         "assets/img/Faculta/ISS/Login.png",
@@ -13,22 +35,10 @@ export const PROGRAMMING: Project[] = [
         "assets/img/Liceu/FTC.png",
         "First season of FTC in Romania. The contest starts from gathering funds and resources, to building the robot, and ends with a competition between the robots of the qualified teams. We qualified to the national phase. My main task was programming, but I contributed a lot to building the physical part too.",
         [
-            new Text("You can see the current state of the team at "),
-            new Text("https://www.facebook.com/boltsngears", true)
-        ]
-    ),
-    new Project(
-        "University Job Formular",
-        "assets/img/Practica/Screenshot 2022-03-01 221720.png",
-        "As practical work, we had to develop websites for the university. Our team had the task of creating a website for teachers that apply to the university to complete a formular and upload their documents. Worked in the front-end, back-end, and database, however I was the representative of the backend team.",
-        [
-        ]
-    ),
-    new Project(
-        "Activities Management",
-        "assets/img/Faculta/MA/Images/Looks/List_Offline.png",
-        "Mobile application done individually for a course. Used for organising daily activities quickly. Realised in both flutter and kotlin. Works with a server database when connected to the internet, and saves data locally for offline interaction.",
-        [
+            new Text("", false, [
+            { text: "You can see the current state of the team at: " },
+            { text: "Bolts and Gears", isLink: true, url: "https://www.facebook.com/boltsngears" }
+            ] as RichTextSegment[])
         ]
     ),
     new Project(
@@ -43,6 +53,22 @@ export const PROGRAMMING: Project[] = [
         "assets/img/Faculta/Licenta/Screenshot 2022-05-28 121938.png",
         "A 3D simulation of a stadium evacuation done in Unity. The scenarios are done following real life planning, with a combination of behaviours for the AI agents.",
         [
+        ]
+    ),
+    new Project(
+        "University Job Formular",
+        "assets/img/Practica/Screenshot 2022-03-01 221720.png",
+        "As practical work, we had to develop websites for the university. Our team had the task of creating a website for teachers that apply to the university to complete a formular and upload their documents. Worked in the front-end, back-end, and database, however I was the representative of the backend team.",
+        [
+        ]
+    ),
+    new Project(
+        "Activities Management",
+        "assets/img/Faculta/MA/Images/Looks/Preview.png",
+        "Mobile application done individually for a course. Used for organising daily activities quickly. Realised in both flutter and kotlin. Works with a server database when connected to the internet, and saves data locally for offline interaction.",
+        [
+            new ImgPath("assets/img/Faculta/MA/Images/Looks/Update.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/MA/Images/Looks/OfflineWarning.png", false, "400px")
         ]
     ),
     new Project(
@@ -98,6 +124,29 @@ export const PROGRAMMING: Project[] = [
 
 export const GAMES: Project[] = [
     new Project(
+        "Fish Fantasy",
+        "assets/img/Games/FishFantasy/FishFantasy.jpg",
+        "A mobile fishing game featuring intuitive touch controls and progression mechanics. Players can explore different fishing locations, catch various fish species, and upgrade their equipment. Built with a focus on relaxing gameplay and beautiful visuals.",
+        [
+            new Text("", false, [
+                { text: "Game Features:" },
+                { text: "", isNewline: true },
+                { text: "• Intuitive touch-based fishing mechanics" },
+                { text: "", isNewline: true },
+                { text: "• Multiple fishing locations to explore" },
+                { text: "", isNewline: true },
+                { text: "• Equipment upgrade system" },
+                { text: "", isNewline: true },
+                { text: "• Variety of fish species to catch" },
+                { text: "", isNewline: true },
+                { text: "• Relaxing gameplay experience" },
+                { text: "", isNewline: true },
+                { text: "", isNewline: true },
+                { text: "Platform: Mobile (Android)" }
+            ] as RichTextSegment[])
+        ]
+    ),
+    new Project(
         "Carl",
         "assets/img/Games/Carl.png",
         "Winner of the GetCrEAtive hackathon, this game was done in a three-man team in 24h. It's a side-view 2D racing game, but with a twist. This is better to show, not tell 😉",
@@ -108,17 +157,20 @@ export const GAMES: Project[] = [
     new Project(
         "Procedural Village Generation",
         "assets/img/Faculta/Master/unnamed.png",
-        "Although not a game by itself, this project is intended for game development. It's a gamified approach on village procedural generation, making use of suggestions to let the designer maintain more control over the creation process.",
+        "Although not a game by itself, this project was intended for game development. It's a gamified approach on village procedural generation, making use of suggestions to let the designer maintain more control over the creation process.",
         [
-            new Text("You can read more about the research at:"),
-            new Text("https://www.gamedeveloper.com/blogs/human-ai-interaction-improves-the-design-process", true),
-            new Text("http://dx.doi.org/10.13140/RG.2.2.23595.92966/1", true)
+            new Text("", false, [
+                { text: "You can read more about the research at:" },
+                { text: "", isNewline: true },
+                { text: "Game Developer Article", isLink: true, url: "https://www.gamedeveloper.com/blogs/human-ai-interaction-improves-the-design-process" },
+                { text: "Research Paper", isLink: true, url: "http://dx.doi.org/10.13140/RG.2.2.23595.92966/1" }
+            ] as RichTextSegment[])
         ]
     ),
     new Project(
         "Little Knight",
         "assets/img/Games/LK/Screenshot_20190701-213821.png",
-        "My first released game, for android devices. Side-view 2D fantasy game with a knight straded on a flying island. The game is not on Google Play anymore because I haven't updated it after new rules have been enforced regarding ads",
+        "My first released game, for android devices. Side-view 2D fantasy game with a knight stranded on a flying island. The game is not on Google Play anymore because I haven't updated it after new rules have been enforced regarding ads",
         [
         ]
     ),
@@ -150,16 +202,4 @@ export const GAMES: Project[] = [
         [
         ]
     )
-    // ,
-    // new Project(
-    //     "Vandals",
-    //     "",
-    //     "",
-    //     [
-    //         new ImgPath("assets/img/facebook.png"),
-    //         new Text("a"),
-    //         new Text("b"),
-    //         new ImgPath("assets/img/linkedin.png")
-    //     ]
-    // )
 ]
