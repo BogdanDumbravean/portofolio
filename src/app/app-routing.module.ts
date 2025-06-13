@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MainComponent as AboutComponent } from './about/main/main.component';
-import { MainComponent as PortofolioComponent } from './portofolio/main/main.component';
-import { ProgrammingComponent } from './portofolio/programming/programming.component';
-import { GamesComponent } from './portofolio/games/games.component';
+import { MainComponent as PortfolioComponent } from './portfolio/main/main.component';
+import { ProgrammingComponent } from './portfolio/programming/programming.component';
+import { GamesComponent } from './portfolio/games/games.component';
 import { EducationComponent } from './about/education/education.component';
 import { HobbiesComponent } from './about/hobbies/hobbies.component';
-import { ProjectDetailComponent } from './portofolio/project-detail/project-detail.component';
+import { ProjectDetailComponent } from './portfolio/project-detail/project-detail.component';
 
 const routes: Routes = [
   {
@@ -19,8 +19,8 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'portofolio',
-    component: PortofolioComponent
+    path: 'portfolio',
+    component: PortfolioComponent
   },
   {
     path: 'programming',

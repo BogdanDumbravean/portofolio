@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portofolio';
+  title = 'portfolio';
   gmail: string = "dumbraveanb@gmail.com";
   instagramLink: string = "https://www.instagram.com/bogdan_dumbra/";
   facebookLink: string = "https://www.facebook.com/bogdan.dumbravean";

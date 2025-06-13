@@ -1,5 +1,5 @@
 {
-  "name": "portofolio",
+  "name": "portfolio",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --base-href=/portofolio/ && npx angular-cli-ghpages --dir=dist/portofolio"
+    "deploy": "ng build --base-href=/portfolio/ && npx angular-cli-ghpages --dir=dist/portfolio"
   },
   "private": true,
   "dependencies": {
