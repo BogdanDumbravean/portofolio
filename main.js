@@ -2187,6 +2187,7 @@ const PROGRAMMING = [
     ])
 ];
 const GAMES = [
+    new _project_model__WEBPACK_IMPORTED_MODULE_0__.Project("Vandals", "assets/img/triangle-mosaic.png", "The project I spent my last years developing full-time and is still being developed. Includes custom shaders, Photon Fusion multiplayer, designed and optimised for mobile. Still a work in progress and under NDA until we publish it.", []),
     new _project_model__WEBPACK_IMPORTED_MODULE_0__.Project("Fish Fantasy", "assets/img/Games/FishFantasy/FishFantasy.jpg", "A mobile fishing game featuring intuitive touch controls and progression mechanics. Players can explore different fishing locations, catch various fish species, and upgrade their equipment. Built with a focus on relaxing gameplay and beautiful visuals.", [
         new _project_model__WEBPACK_IMPORTED_MODULE_0__.Text("", false, [
             { text: "Game Features:" },
