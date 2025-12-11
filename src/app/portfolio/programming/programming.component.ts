@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PROGRAMMING } from 'src/app/project.list';
 import { Project } from 'src/app/project.model';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-programming',
@@ -8,16 +8,18 @@ import { Project } from 'src/app/project.model';
   styleUrls: ['./programming.component.css']
 })
 export class ProgrammingComponent implements OnInit {
-  programming: Project[];
-  filteredProjects: Project[];
+  programming: Project[] = [];
+  filteredProjects: Project[] = [];
   searchTerm: string = '';
 
-  constructor() { 
-    this.programming = PROGRAMMING;
-    this.filteredProjects = [...this.programming];
+  constructor(private projectService: ProjectService) { 
   }
 
   ngOnInit(): void {
+    this.projectService.getProgrammingProjects().subscribe(projects => {
+      this.programming = projects;
+      this.filteredProjects = [...this.programming];
+    });
   }
   searchProjects(event: Event): void {
     const input = event.target as HTMLInputElement;

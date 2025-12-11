@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { PROGRAMMING, GAMES } from 'src/app/project.list';
-import { ImgPath, Text, Project } from 'src/app/project.model';
+import { Title } from '@angular/platform-browser';
+import { ImgPath, Text, Project, MyArrayType, RichTextSegment } from 'src/app/project.model';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -17,90 +18,97 @@ export class ProjectDetailComponent implements OnInit {  project!: Project;
   projectsList: Project[] = [];
   videoError: boolean = false;
 
-  constructor(private route: ActivatedRoute, private location: Location) {
+  constructor(
+    private route: ActivatedRoute, 
+    private router: Router, 
+    private location: Location, 
+    private projectService: ProjectService,
+    private titleService: Title
+  ) {
   }
 
   ngOnInit(): void {
     // Subscribe to route parameter changes to handle navigation between projects
     this.route.params.subscribe(params => {
-      this.loadProject();
+      const list = params['list'];
+      const id = +params['id'];
+      this.loadProject(list, id);
     });
-  }  loadProject(): void {
-    this.currentIndex = Number(this.route.snapshot.paramMap.get('id'));
-    this.projectType = String(this.route.snapshot.paramMap.get('list'));
+  }
+
+  loadProject(list: string, id: number): void {
+    this.currentIndex = id;
+    this.projectType = list;
     
     // Reset video error state
     this.videoError = false;
     
     console.log('Loading project:', this.projectType, this.currentIndex);
     
+    this.projectService.getProject(this.projectType, this.currentIndex).subscribe(project => {
+      if (project) {
+        this.project = project;
+        this.titleService.setTitle(`${project.title} - Bogdan Dumbrăvean`);
+      } else {
+        this.project = new Project("Project Not Found", "", "The requested project could not be found.", []);
+        this.titleService.setTitle("Project Not Found - Bogdan Dumbrăvean");
+      }
+    });
+
+    let listObservable;
     if (this.projectType === "programming") {
-      this.projectsList = PROGRAMMING;
-      if (this.currentIndex >= 0 && this.currentIndex < PROGRAMMING.length) {
-        this.project = PROGRAMMING[this.currentIndex];
-      } else {
-        console.error('Invalid programming project index:', this.currentIndex);
-        this.project = new Project("Project Not Found", "", "The requested project could not be found.", []);
-      }
+      listObservable = this.projectService.getProgrammingProjects();
     } else if (this.projectType === "games") {
-      this.projectsList = GAMES;
-      if (this.currentIndex >= 0 && this.currentIndex < GAMES.length) {
-        this.project = GAMES[this.currentIndex];
-      } else {
-        console.error('Invalid games project index:', this.currentIndex);
-        this.project = new Project("Project Not Found", "", "The requested project could not be found.", []);
-      }
-    } else {
-      console.error('Invalid project type:', this.projectType);
-      this.project = new Project("", "", "", []);
-      this.projectsList = [];
+      listObservable = this.projectService.getGamesProjects();
     }
-    
-    // Set navigation availability
-    this.hasPrevious = this.currentIndex > 0;
-    this.hasNext = this.currentIndex < this.projectsList.length - 1;
-    
-    console.log('Navigation state:', { hasPrevious: this.hasPrevious, hasNext: this.hasNext, total: this.projectsList.length });
+
+    if (listObservable) {
+      listObservable.subscribe(list => {
+        this.projectsList = list;
+        this.hasPrevious = this.currentIndex > 0;
+        this.hasNext = this.currentIndex < this.projectsList.length - 1;
+      });
+    } else {
+        this.projectsList = [];
+        this.hasPrevious = false;
+        this.hasNext = false;
+    }
   }
 
-  goBack(): void {
-    this.location.back();
+  isLink(val: MyArrayType): boolean { 
+    return (val instanceof Text) && val.isLink; 
   }
 
-  isLink(val: any): boolean { 
-    return val.isLink; 
+  isVideo(val: MyArrayType): boolean { 
+    return (val instanceof ImgPath) && val.isVideo; 
   }
 
-  isVideo(val: any): boolean { 
-    return val.isVideo; 
-  }
-
-  isPath(val: any): boolean { 
+  isPath(val: MyArrayType): val is ImgPath { 
     return val instanceof ImgPath; 
   }
   
-  getPath(val: any): string {
-    return val.path;
+  getPath(val: MyArrayType): string {
+    return (val instanceof ImgPath) ? val.path : '';
   }
 
-  getMaxWidth(val: any): string | undefined {
-    return val.maxWidth;
+  getMaxWidth(val: MyArrayType): string | undefined {
+    return (val instanceof ImgPath) ? val.maxWidth : undefined;
   }
 
-  getMaxHeight(val: any): string | undefined {
-    return val.maxHeight;
+  getMaxHeight(val: MyArrayType): string | undefined {
+    return (val instanceof ImgPath) ? val.maxHeight : undefined;
   }
 
-  getText(val: any): string {
-    return val.text;
+  getText(val: MyArrayType): string {
+    return (val instanceof Text) ? val.text : '';
   }
 
-  isRichText(val: any): boolean {
-    return val.isRichText === true;
+  isRichText(val: MyArrayType): boolean {
+    return (val instanceof Text) && (val.isRichText === true);
   }
 
-  getRichContent(val: any): any[] {
-    return val.richContent || [];
+  getRichContent(val: MyArrayType): RichTextSegment[] {
+    return (val instanceof Text && val.richContent) ? val.richContent : [];
   }
 
   onImageError(event: any): void {

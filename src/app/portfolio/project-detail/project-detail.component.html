@@ -4,7 +4,7 @@
         <div class="project-header">
             <div class="breadcrumbs">
                 <a routerLink="/portfolio">Portfolio</a> / 
-                <a [routerLink]="['/'+projectType]">{{projectType | titlecase}}</a> / 
+                <a [routerLink]="['/portfolio', projectType]">{{projectType | titlecase}}</a> / 
                 <span>{{project.title}}</span>
             </div>
             <h1>{{project.title}}</h1>
@@ -106,7 +106,7 @@
           <!-- Project Navigation -->
         <div class="project-navigation">
             <div class="prev-project">
-                <a *ngIf="hasPrevious" [routerLink]="['/projects', projectType, currentIndex - 1]">
+                <a *ngIf="hasPrevious" [routerLink]="['/portfolio/projects', projectType, currentIndex - 1]">
                     <span class="nav-arrow">←</span> Previous Project
                 </a>
                 <span *ngIf="!hasPrevious" class="nav-disabled">
@@ -114,10 +114,10 @@
                 </span>
             </div>
             <div class="back-to-list">
-                <a [routerLink]="['/'+projectType]">All {{projectType | titlecase}}</a>
+                <a [routerLink]="['/portfolio', projectType]">All {{projectType | titlecase}}</a>
             </div>
             <div class="next-project">
-                <a *ngIf="hasNext" [routerLink]="['/projects', projectType, currentIndex + 1]">
+                <a *ngIf="hasNext" [routerLink]="['/portfolio/projects', projectType, currentIndex + 1]">
                     Next Project <span class="nav-arrow">→</span>
                 </a>
                 <span *ngIf="!hasNext" class="nav-disabled">

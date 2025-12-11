@@ -2,6 +2,36 @@ import { ImgPath, Project, Text, RichTextSegment } from "./project.model";
 
 export const PROGRAMMING: Project[] = [
     new Project(
+        "KinderCheck",
+        "assets/img/KinderCheck/Index.png",
+        "A full-stack kindergarten attendance management system built with React 19 and Node.js, featuring role-based access and automated locking rules.",
+        [
+            new Text("", false, [
+                { text: "KinderCheck is a comprehensive attendance management solution designed to streamline communication between kindergarten teachers and parents. It replaces manual tracking with a digital, automated system." },
+                { text: "", isNewline: true },
+                { text: "Tech Stack:" },
+                { text: "", isNewline: true },
+                { text: "• Frontend: React 19, Vite, TypeScript, Tailwind CSS" },
+                { text: "", isNewline: true },
+                { text: "• Backend: Node.js, Express, MongoDB" },
+                { text: "", isNewline: true },
+                { text: "• Features: JWT Authentication, Automated Locking Logic, Responsive Design" }
+            ] as RichTextSegment[]),
+            new ImgPath("assets/img/KinderCheck/Teacher.png", false, "100%"),
+            new Text("", false, [
+                { text: "Teacher Dashboard:" },
+                { text: "", isNewline: true },
+                { text: "The secure dashboard allows educators to manage daily attendance via an interactive grid. Teachers can manually lock/unlock specific days and configure the active week for parents. Visual feedback (Green for saved, Blue for unsaved) ensures data accuracy." }
+            ] as RichTextSegment[]),
+            new ImgPath("assets/img/KinderCheck/Parent.png", false, "100%"),
+            new Text("", false, [
+                { text: "Parent Interface:" },
+                { text: "", isNewline: true },
+                { text: "A public, intuitive interface for parents to mark attendance. It enforces strict locking rules (e.g., auto-lock after 7 PM the previous day) to prevent unauthorized retroactive changes." }
+            ] as RichTextSegment[])
+        ]
+    ),
+    new Project(
         "Metacognis Research Assistant",
         "assets/img/Metacognis/Metacognis.png",
         "A React-based web application for AI-driven research paper analysis, developed as a freelance front-end developer in a two-man team.",
@@ -19,7 +49,7 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Responsive design for accessibility across devices" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Metacognis/Metacognis.png", false, "400px"),
+            new ImgPath("assets/img/Metacognis/Metacognis.png", false, "100%"),
             new Text("", false, [
                 { text: "This project highlights my ability to work as a freelance front-end developer and collaborate effectively in a team." }
             ] as RichTextSegment[])
@@ -45,7 +75,8 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Node.js back-end for robust data handling and AI integration" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/PopTechSmartGrades/StudentView.png", false, "400px"),
+            new ImgPath("assets/img/PopTechSmartGrades/StudentView.png", false, "100%"),
+            new ImgPath("assets/img/PopTechSmartGrades/GeneratedTest.png", false, "400px"),
             new Text("", false, [
                 { text: "Winning second place in its category, this project demonstrates my ability to work under pressure, collaborate in a team, and deliver innovative solutions using AI." }
             ] as RichTextSegment[])
@@ -71,9 +102,9 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Responsive design for web accessibility" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Faculta/ISS/Login.png", false, "400px"),
-            new ImgPath("assets/img/Faculta/ISS/Dashboard.png", false, "400px"),
-            new ImgPath("assets/img/Faculta/ISS/SessionManagement.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/ISS/Login.png", false, "100%"),
+            new ImgPath("assets/img/Faculta/ISS/Dashboard.png", false, "100%"),
+            new ImgPath("assets/img/Faculta/ISS/SessionManagement.png", false, "100%"),
             new Text("", false, [
                 { text: "The application was built using React, .NET Core and an SQL Server database and follows best practices for software development. It was a valuable learning experience in team collaboration and project management." }
             ] as RichTextSegment[])
@@ -130,9 +161,9 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Structured data (JSON-LD) for enhanced search engine indexing" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Portfolio/portfolio-screenshot.png", false, "400px"),
+            new ImgPath("assets/img/Portfolio/portfolio-screenshot.png", false, "100%"),
             new ImgPath("assets/img/Portfolio/portfolio-about.png", false, "400px"),
-            new ImgPath("assets/img/Portfolio/portfolio-projects.png", false, "400px"),
+            new ImgPath("assets/img/Portfolio/portfolio-projects.png", false, "100%"),
             new Text("", false, [
                 { text: "The website is a reflection of my skills in front-end development, UI/UX design, and full-stack integration. It serves as a platform to connect with potential collaborators and showcase my work." },
                 { text: "", isNewline: true },
@@ -159,7 +190,7 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• UiPath workflows for seamless automation" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Faculta/RPA/Screenshot 2022-03-01 222002.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/RPA/Screenshot 2022-03-01 222002.png", false, "100%"),
             new Text("", false, [
                 { text: "This project highlights the power of RPA (Robotic Process Automation) in streamlining repetitive tasks and improving efficiency in data analysis workflows." }
             ] as RichTextSegment[])
@@ -183,7 +214,7 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Analysis of evacuation efficiency under different scenarios" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Faculta/Licenta/Screenshot 2022-05-28 121938.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/Licenta/Screenshot 2022-05-28 121938.png", false, "100%"),
         ]
     ),
     new Project(
@@ -228,6 +259,8 @@ export const PROGRAMMING: Project[] = [
                 { text: "• User-friendly interface for quick activity management" }
             ] as RichTextSegment[]),
             new ImgPath("assets/img/Faculta/MA/Images/Looks/Update.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/MA/Images/Looks/List.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/MA/Images/Looks/Create.png", false, "400px"),
             new ImgPath("assets/img/Faculta/MA/Images/Looks/OfflineWarning.png", false, "400px")
         ]
     ),
@@ -249,7 +282,9 @@ export const PROGRAMMING: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• User-friendly design for managing rentals, returns, and inventory" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Faculta/MPP/MPP.png", false, "400px")
+            new ImgPath("assets/img/Faculta/MPP/MPP.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/MPP/MPP2.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/MPP/MPP3.png", false, "400px")
         ]
     ),
     new Project(
@@ -419,7 +454,7 @@ export const GAMES: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Collaborative teamwork to deliver a polished product" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Games/Carl.mp4", true),
+            new ImgPath("assets/img/Games/Carl.mp4", true, "100%"),
             new Text("", false, [
                 { text: "This project showcases my ability to work under pressure and deliver creative solutions in a team environment." }
             ] as RichTextSegment[])
@@ -441,7 +476,7 @@ export const GAMES: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Research-backed implementation for practical use in game development" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Faculta/Master/unnamed.png", false, "400px"),
+            new ImgPath("assets/img/Faculta/Master/unnamed.png", false, "100%"),
             new Text("", false, [
                 { text: "You can read more about the research at:" },
                 { text: "Game Developer Article", isLink: true, url: "https://www.gamedeveloper.com/blogs/human-ai-interaction-improves-the-design-process" },
@@ -465,7 +500,8 @@ export const GAMES: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Fantasy-themed visuals and immersive sound effects" }
             ] as RichTextSegment[]),
-            new ImgPath("assets/img/Games/LK/Screenshot_20190707-085943.png", false, "400px"),
+            new ImgPath("assets/img/Games/LK/Screenshot_20190707-085943.png", false, "100%"),
+            new ImgPath("assets/img/Games/LK/Screenshot_20190707-090155.png", false, "100%"),
             new Text("", false, [
                 { text: "Although the game is no longer available on Google Play due to ad policy changes, it remains a milestone in my game development journey." }
             ] as RichTextSegment[])
@@ -486,7 +522,9 @@ export const GAMES: Project[] = [
                 { text: "• Team collaboration to deliver a polished product" },
                 { text: "", isNewline: true },
                 { text: "• Award-winning design and gameplay mechanics" }
-            ] as RichTextSegment[])
+            ] as RichTextSegment[]),
+            new ImgPath("assets/img/Games/BookOfHeroes/Book of Heroes 2.png", false, "100%"),
+            new ImgPath("assets/img/Games/BookOfHeroes/Book of Heroes 3.png", false, "100%")
         ]
     ),
     new Project(
@@ -523,6 +561,7 @@ export const GAMES: Project[] = [
                 { text: "", isNewline: true },
                 { text: "• Scoreboard and competitive mechanics for engaging matches" }
             ] as RichTextSegment[]),
+            new ImgPath("assets/img/Games/Flying Jousting/Screenshot 2022-05-28 124705.png", false, "100%"),
             new Text("", false, [
                 { text: "This project highlights my ability to develop multiplayer games and implement innovative gameplay mechanics." }
             ] as RichTextSegment[])
@@ -543,7 +582,8 @@ export const GAMES: Project[] = [
                 { text: "• Humorous gameplay with unique challenges" },
                 { text: "", isNewline: true },
                 { text: "• Nostalgic setting inspired by high school experiences" }
-            ] as RichTextSegment[])
+            ] as RichTextSegment[]),
+            new ImgPath("assets/img/Games/FriendsGame/Screenshot 2022-05-28 130558.png", false, "100%")
         ]
     )
 ]

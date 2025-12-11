@@ -1,4 +1,4 @@
-type MyArrayType = ImgPath | Text ;
+export type MyArrayType = ImgPath | Text ;
 
 export class Project {
     title:string;

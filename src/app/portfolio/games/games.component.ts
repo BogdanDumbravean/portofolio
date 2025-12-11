@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GAMES } from 'src/app/project.list';
 import { Project } from 'src/app/project.model';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-games',
@@ -8,16 +8,18 @@ import { Project } from 'src/app/project.model';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  games: Project[];
-  filteredGames: Project[];
+  games: Project[] = [];
+  filteredGames: Project[] = [];
   searchTerm: string = '';
 
-  constructor() { 
-    this.games = GAMES;
-    this.filteredGames = [...this.games];
+  constructor(private projectService: ProjectService) { 
   }
 
   ngOnInit(): void {
+    this.projectService.getGamesProjects().subscribe(games => {
+      this.games = games;
+      this.filteredGames = [...this.games];
+    });
   }
   searchGames(event: Event): void {
     const input = event.target as HTMLInputElement;

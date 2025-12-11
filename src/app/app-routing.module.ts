@@ -1,46 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { MainComponent as AboutComponent } from './about/main/main.component';
-import { MainComponent as PortfolioComponent } from './portfolio/main/main.component';
-import { ProgrammingComponent } from './portfolio/programming/programming.component';
-import { GamesComponent } from './portfolio/games/games.component';
-import { EducationComponent } from './about/education/education.component';
-import { HobbiesComponent } from './about/hobbies/hobbies.component';
-import { ProjectDetailComponent } from './portfolio/project-detail/project-detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
+    component: HomeComponent,
+    data: { title: 'Home - Bogdan Dumbrăvean' }
   },
   {
     path: 'portfolio',
-    component: PortfolioComponent
+    loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
   },
   {
-    path: 'programming',
-    component: ProgrammingComponent
-  },
-  {
-    path: 'games',
-    component: GamesComponent
-  },
-  {
-    path: 'education',
-    component: EducationComponent
-  },
-  {
-    path: 'hobbies',
-    component: HobbiesComponent
-  },
-  {
-    path: 'projects/:list/:id',
-    component: ProjectDetailComponent
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   }
 ];
 
